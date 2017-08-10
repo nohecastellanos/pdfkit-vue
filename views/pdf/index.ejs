@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hoola</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div id="demo">
+    <pre>{{ $data }}</pre>
+      <h1>Creación de PDF {{ titulo }}</h1>
+      <hr/>
+	<h3>Texto a introducir</h3>
+	<input type="text" v-model="titulo"/>
+	<button @click="generar()">Generar PDF</button>
+	<br/>
+      <iframe type="application/pdf" width="560" height="315" :src="pdf" frameborder="0" @load="load()" v-show="loaded" allowfullscreen></iframe>
+    </div>
+</div>
+    
+    <script src="https://github.com/devongovett/pdfkit/releases/download/v0.6.2/pdfkit.js"></script>
+    <script src="https://github.com/devongovett/blob-stream/releases/download/v0.1.2/blob-stream-v0.1.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+    <script src="/javascripts/Vue.js"></script>
+  </body>
+</html>
+
